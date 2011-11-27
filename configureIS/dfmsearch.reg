@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.dfm]
+@="DelphiForm" 
+"Content Type"="text/plain" 
+"PerceivedType"="text" 
+
+[HKEY_CLASSES_ROOT\.dfm\PersistentHandler] 
+@="{5e941d80-bf96-11cd-b579-08002b30bfeb}" 
