@@ -3,3 +3,5 @@
 /TracIndexServer.egg-info
 /dist
 /build
+/tracindexserversearch/__init__.pyc
+/tracindexserversearch/indexserversearch.pyc
