@@ -57,8 +57,7 @@ setup(
     packages = find_packages(exclude=['*.tests*']),
 	cmdclass = {'clean': CleanCommand, 'deploy': DeployCommand, 'bounce': BounceCommand},
     entry_points = {
-        'trac.plugins': ['tracindexserversearch = tracindexserversearch'],
-        ],		
+        'trac.plugins': ['tracindexserversearch = tracindexserversearch'],	
     }
 
 )
