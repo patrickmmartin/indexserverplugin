@@ -8,7 +8,7 @@
 # are also available at http://trac.edgewall.com/license.html.
 
 from trac.core import *
-from trac.Search import ISearchSource, shorten_result
+from trac.search import ISearchSource, shorten_result
 from trac.util import Markup, escape
 from trac.mimeview.api import Mimeview
 import win32com.client
