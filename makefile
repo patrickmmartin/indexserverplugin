@@ -3,9 +3,7 @@ default: clean all docs tests
 
 clean:
 	@echo "   === cleaning	==="
-	@rm -rf build
-	@rm -rf dist
-	@rm -rf TracIndexServer.egg-info 
+	@python setup.py clean
 
 all: 
 	@echo "   === building egg ==="
