@@ -32,9 +32,9 @@ class CleanCommand(CustomCommand):
 			shutil.rmtree(dirname)
     def run(self):
         assert os.getcwd() == self.cwd, 'Must be in package root: %s' % self.cwd
-        self.removedir("./build")	
-        self.removedir("./dist")	
-        self.removedir("./TracIndexServer.egg-info")	
+        self.removedir("build")	
+        self.removedir("dist")	
+        self.removedir("TracIndexServer.egg-info")	
 
 		
 class DeployCommand(CustomCommand):
