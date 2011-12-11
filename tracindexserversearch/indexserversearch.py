@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006 Patrick Martin <patrickmmartin@gmail.com>
+# Copyright (C) 2006-2011 Patrick Martin <patrickmmartin@gmail.com>
 # All rights reserved.
 #
 # This software is licensed as described in the file COPYING, which
-# you should have received as part of this distribution. The terms
-# are also available at http://trac.edgewall.com/license.html.
+# you should have received as part of this distribution. 
 
 from trac.core import *
 from trac.search import ISearchSource, shorten_result
@@ -13,6 +12,7 @@ from trac.util import Markup, escape
 from trac.mimeview.api import Mimeview
 import win32com.client
 from pythoncom import CoInitialize, CoUninitialize, com_error
+
 com= win32com.client.Dispatch
 con= win32com.client.constants
 
@@ -161,25 +161,26 @@ class IndexServerProxy(Component):
         fso = None
         return hits
 
-      # todo proper clean -up even when the plug-in is in big trouble
+      # attempt clean-up under all circumstances
       finally:
         CoUninitialize()
 
 
-  # ISearchSource methods
+# ISearchSource methods
 
 ##         The events returned by this function must be tuples of the form 
 ##         (internalname, friendlyname, onbydefault). 
   
   def get_search_filters(self, req):
+  """Yield the new search item implemented by this class."""   
       # this Component will support an "Index Server" search
-      # todo: have a content, property, advanced search?
       yield ('indexserver', 'Index Server', 1)
 
 ##         The events returned by this function must be tuples of the form 
 ##         (href, title, date, author, excerpt). 
 
   def get_search_results(self, req, query, filters):
+  """Yield the search results returned from this query."""   
     if 'indexserver' not in filters:
       return
     repo = self.env.get_repository(req.authname)
